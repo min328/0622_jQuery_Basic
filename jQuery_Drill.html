@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery_Drill</title>
+    <style>
+        div#wrap {
+            width: 400px;
+            height: 500px;
+            padding: 20px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            font-size: 30px;
+        }
+
+        button {
+            font-size: 30px;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /* js 로 구현됨 */
+        function fn() {
+            document.getElementById("pTag").style.color = "#f00";
+        }
+
+        /* jQuery 로 구현됨*/
+        /* 작성방법 1. 기본템플릿 2. 선택자+1차기능 3. 1차기능>익명함수+2차기능 */
+        $(function() {
+            $("button:last-child").click(function() {
+                $(this).css({
+                    "color": "#0f0"
+                });
+
+                $("a").attr("href", "https://naver.com");
+            });
+
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>제목입니다!</h1>
+        <p id="pTag">JS와 jQuery사용법입니다.</p>
+        <a href="#">네이버로 이동</a>
+        <br><br>
+        <button type="button" onclick="fn()">JS적용버튼</button>
+        <br><br>
+        <button type="button" >jQuery적용버튼</button>
+
+    </div>
+</body>
+
+</html>
